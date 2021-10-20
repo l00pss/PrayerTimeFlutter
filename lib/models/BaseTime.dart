@@ -27,4 +27,20 @@ class BaseTimes {
     required this.axsam,
     required this.yatsi
   });
+
+  factory BaseTimes.fromJson(Map<String, dynamic> decoded) {
+    return BaseTimes(
+        dayOfYear: decoded['dayOfYear'],
+        todayDate: decoded['todayDate'],
+        todayHijrahDate: decoded['todayHijrahDate'],
+        qiblaClock: decoded['qiblaClock'],
+        imsaq: decoded['imsaq'],
+        sabah: decoded['sabah'],
+        gunes: decoded['gunes'],
+        gunorta: decoded['gunorta'],
+        ikindi: decoded['ikindi'],
+        axsam: decoded['axsam'],
+        yatsi: decoded['yatsi']
+    );
+  }
 }

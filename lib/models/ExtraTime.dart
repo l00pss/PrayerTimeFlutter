@@ -22,4 +22,19 @@ class ExtraTimes {
     required this.teheccud,
     required this.seher
   });
+
+  factory ExtraTimes.fromJson(Map<String, dynamic> decoded) {
+    return ExtraTimes(
+      israk: decoded['israk'],
+      dahve: decoded['dahve'],
+      kerahat: decoded['kerahat'],
+      asri_sani: decoded['asri_sani'],
+      isfirar: decoded['isfirar'],
+      istibak: decoded['istibak'],
+      isa_sani: decoded['isa_sani'],
+      midnight: decoded['midnight'],
+      teheccud: decoded['teheccud'],
+      seher: decoded['seher'],
+    );
+  }
 }

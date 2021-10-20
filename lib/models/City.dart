@@ -19,4 +19,17 @@ class City {
     required this.baseTimes,
     required this.extraTimes
   });
+
+
+
+  factory City.fromJson(Map<String, dynamic> decoded) {
+    return City(
+        cityIndex: decoded['cityIndex'],
+        cityOfName: decoded['cityOfName'],
+        qiblaAngle: decoded['qiblaAngle'],
+        magdeg: decoded['magdeg'],
+        baseTimes: BaseTimes.fromJson(decoded['baseTime']),
+        extraTimes: ExtraTimes.fromJson(decoded['extraTime'])
+    );
+  }
 }
