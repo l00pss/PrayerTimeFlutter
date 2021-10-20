@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:prayertime/pages/base/DrawerLayout.dart';
-import 'package:prayertime/pages/base/HomePanel.dart';
 import 'package:prayertime/utility/themes/ThemeFormat.dart';
 import 'package:get/get.dart';
 
