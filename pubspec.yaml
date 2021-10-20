@@ -28,7 +28,7 @@ dependencies:
   font_awesome_flutter: ^9.1.0
   timer_builder: ^2.0.0
   google_nav_bar: ^5.0.5
-  http: ^0.12.2
+  http: ^0.13.1
   sqflite: ^2.0.0+4
   provider: ^6.0.1
   flutter_bloc: ^7.3.1

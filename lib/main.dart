@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:prayertime/dataAccess/checkData/CheckerCityList.dart';
+import 'package:prayertime/dataAccess/client/CityListController.dart';
 import 'package:prayertime/dataAccess/repositories/CityListManager.dart';
 import 'package:prayertime/models/CityComponent.dart';
 import 'package:prayertime/pages/base/DrawerLayout.dart';
@@ -13,26 +15,16 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  Future<void> getAllComponent() async {
-    List<CityListComponent> list = await CityComponentDao().getAll();
-    for(CityListComponent cityListComponent in list){
-      print(cityListComponent.name);
-      print(cityListComponent.index_city);
-    }
-  }
 
-  Future<void> save() async {
-    await CityComponentDao().save(234, "Ba3ku");
-  }
-
-  Future<void> delete() async {
-    await CityComponentDao().delete(3);
-  }
-
-
+Future<void> truncate() async{
+  // await CityComponentDao().truncate();
+  // await CheckerCityList().getDataFromApi();
+  await CheckerCityList().getAllComponent();
+}
   @override
   Widget build(BuildContext context) {
-    save();
+    truncate();
+
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'NamazVaxti.Org',

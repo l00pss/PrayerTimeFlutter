@@ -35,4 +35,9 @@ class CityComponentDao{
     data['name'] = nameOfCity;
     await connection.update("city_list",data,where: "id = ?" ,whereArgs: [id]);
   }
+
+  Future<void> truncate()async{
+    var connection = await DataManager.getConnection();
+    await connection.rawQuery("DELETE from city_list");
+  }
 }
