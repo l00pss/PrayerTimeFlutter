@@ -5,6 +5,7 @@ import 'package:sqflite/sqflite.dart';
 
 class CityComponentDao{
 
+
   Future<List<CityListComponent>> getAll() async {
     var connection = await DataManager.getConnection();
     List<Map<String,dynamic>> maps = await connection.rawQuery("SELECT * FROM city_list");
@@ -13,7 +14,6 @@ class CityComponentDao{
       return CityListComponent(id: row["id"], index_city: row["index_city"], name: row["name"]);
     });
   }
-
 
   Future<void> save(int index_city,String name) async {
     var connection = await DataManager.getConnection();
@@ -28,4 +28,11 @@ class CityComponentDao{
     await connection.delete("city_list",where: "id = ?",whereArgs: [id]);
   }
 
+  Future<void> update(int id,int indexOfCity,String nameOfCity)async {
+    var connection = await DataManager.getConnection();
+    var data = Map<String,dynamic>();
+    data['index_city'] = indexOfCity;
+    data['name'] = nameOfCity;
+    await connection.update("city_list",data,where: "id = ?" ,whereArgs: [id]);
+  }
 }
