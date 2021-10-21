@@ -16,19 +16,23 @@ class ButtonCard extends StatelessWidget {
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Icon(iconData),
-            SizedBox(
-              width: 5,
-            ),
-            Text(
-              title,
-              style: Theme.of(context).textTheme.bodyText2,
-            ),
-          ],
+        child: Container(
+          decoration: BoxDecoration(
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Icon(iconData),
+              SizedBox(
+                width: 5,
+              ),
+              Text(
+                title,
+                style: Theme.of(context).textTheme.bodyText2,
+              ),
+            ],
+          ),
         ),
       ),
     );

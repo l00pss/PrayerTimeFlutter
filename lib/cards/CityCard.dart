@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:prayertime/pages/other/CityList.dart';
 import 'package:prayertime/utility/themes/SnackBarUtility.dart';
 import 'package:timer_builder/timer_builder.dart';
 
@@ -33,7 +34,11 @@ class _CityCardState extends State<CityCard> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>CityList()));
+                  });
+                },
                 child: Text(
                   widget.city,
                   style: Theme.of(context).textTheme.headline1,
