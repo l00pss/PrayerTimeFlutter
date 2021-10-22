@@ -37,6 +37,7 @@ class _OtherPageState extends State<OtherPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 OtherCard(text: "Hesablama Qaydası", icon: Icons.timelapse, onPressed: (){}),
+                OtherCard(text: "Məscidlər", icon: FontAwesomeIcons.mosque, onPressed: (){})
               ],
             )
           ],

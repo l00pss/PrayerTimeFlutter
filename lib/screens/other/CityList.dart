@@ -18,7 +18,7 @@ class _CityListState extends State<CityList> {
 
 
   Future<List<ButtonCard>> getWidgetList() async{
-    await CheckerCityList().getDataFromApi();
+    //await CheckerCityList().getDataFromApi();
     var list = await CityListManager().getAll();
     var _actionItems = <ButtonCard>[];
     list.forEach((element) {
@@ -36,8 +36,8 @@ class _CityListState extends State<CityList> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: FutureBuilder(
+    return Scaffold(
+      body: FutureBuilder(
         future: getWidgetList(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot){
           if(!snapshot.hasData){
@@ -67,7 +67,7 @@ class _CityListState extends State<CityList> {
             );
           }
         },
-      ) ,
+      ),
     );
   }
 }

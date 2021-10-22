@@ -11,6 +11,7 @@ class DataManager{
   static Future<Database> getConnection() async{
     String databasaPath = join(await getDatabasesPath(),databaseName);
     if(await databaseExists(databasaPath)){
+      print('Database already exist');
     }else{
       ByteData data = await rootBundle.load("lib/dataAccess/db/prayertime.sqlite");
       List<int> bytes = data.buffer.asUint8List(data.offsetInBytes,data.lengthInBytes);

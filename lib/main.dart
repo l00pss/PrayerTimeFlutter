@@ -21,8 +21,7 @@ Future<void> truncate() async{
 }
   @override
   Widget build(BuildContext context) {
-    truncate();
-
+   // truncate();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'NamazVaxti.Org',
