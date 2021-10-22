@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:prayertime/pages/base/menu/MenuItems.dart';
+import 'package:prayertime/screens/base/menu/MenuItems.dart';
 import 'package:flutter/services.dart';
 import 'HomePanel.dart';
 import 'menu/MenuPage.dart';

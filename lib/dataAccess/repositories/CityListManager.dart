@@ -3,7 +3,7 @@ import 'package:prayertime/dataAccess/DataManager.dart';
 import 'package:prayertime/models/CityComponent.dart';
 import 'package:sqflite/sqflite.dart';
 
-class CityComponentDao{
+class CityListManager{
 
 
   Future<List<CityListComponent>> getAll() async {

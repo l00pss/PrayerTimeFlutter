@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prayertime/pages/base/menu/MenuItems.dart';
+import 'package:prayertime/screens/base/menu/MenuItems.dart';
 class MenuPage extends StatelessWidget {
   final MenuItem currentItem;
   final ValueChanged<MenuItem> onSelectedItem;

@@ -4,7 +4,7 @@ import 'package:prayertime/dataAccess/checkData/CheckerCityList.dart';
 import 'package:prayertime/dataAccess/client/CityListController.dart';
 import 'package:prayertime/dataAccess/repositories/CityListManager.dart';
 import 'package:prayertime/models/CityComponent.dart';
-import 'package:prayertime/pages/base/DrawerLayout.dart';
+import 'package:prayertime/screens/base/DrawerLayout.dart';
 import 'package:prayertime/utility/themes/ThemeFormat.dart';
 import 'package:get/get.dart';
 

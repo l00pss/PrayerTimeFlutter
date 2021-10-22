@@ -17,7 +17,7 @@ class CheckerCityList{
   }
 
   Future<void> getAllComponent() async {
-    List<CityListComponent> list = await CityComponentDao().getAll();
+    List<CityListComponent> list = await CityListManager().getAll();
     for(CityListComponent cityListComponent in list){
       print(cityListComponent.name);
       print(cityListComponent.index_city);
@@ -25,11 +25,11 @@ class CheckerCityList{
   }
 
   Future<void> save(int index,String name) async {
-    await CityComponentDao().save(index, name);
+    await CityListManager().save(index, name);
   }
 
   Future<void> delete() async {
-    await CityComponentDao().delete(3);
+    await CityListManager().delete(3);
   }
 
 

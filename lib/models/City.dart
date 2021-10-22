@@ -3,7 +3,6 @@ import 'BaseTime.dart';
 import 'ExtraTime.dart';
 
 class City {
-
   late String cityIndex;
   late String cityOfName;
   late String qiblaAngle;

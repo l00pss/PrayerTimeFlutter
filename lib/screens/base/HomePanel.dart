@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:prayertime/pages/base/compass/CompassPage.dart';
-import 'package:prayertime/pages/base/HomePage.dart';
-import 'package:prayertime/pages/base/OtherPage.dart';
-import 'package:prayertime/pages/base/SettingsPage.dart';
+import 'package:prayertime/screens/base/compass/CompassPage.dart';
+import 'package:prayertime/screens/base/HomePage.dart';
+import 'package:prayertime/screens/base/OtherPage.dart';
+import 'package:prayertime/screens/base/SettingsPage.dart';
 import 'package:prayertime/utility/themes/SnackBarUtility.dart';
 import 'package:prayertime/utility/themes/ThemeFormat.dart';
 import 'package:get/get.dart';

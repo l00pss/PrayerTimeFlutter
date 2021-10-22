@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class BaseTimes {
-
   String dayOfYear;
   String todayDate;
   String todayHijrahDate;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:prayertime/pages/other/CityList.dart';
+import 'package:prayertime/screens/other/CityList.dart';
 import 'package:prayertime/utility/themes/SnackBarUtility.dart';
 import 'package:timer_builder/timer_builder.dart';
 
@@ -36,7 +36,7 @@ class _CityCardState extends State<CityCard> {
               TextButton(
                 onPressed: () {
                   setState(() {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>CityList()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> CityList()));
                   });
                 },
                 child: Text(
