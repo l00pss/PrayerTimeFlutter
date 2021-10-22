@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:prayertime/cards/CityCard.dart';
 import 'package:prayertime/cards/ExportCards.dart';
+import 'package:prayertime/models/City.dart';
+import 'package:prayertime/models/CityComponent.dart';
 
 class HomePage extends StatefulWidget {
-
-
+  static var listComponent = CityListComponent(id: 0, index_city: 1425, name: "Baku");
   @override
   _HomePageState createState() => _HomePageState();
 }
+
+
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -20,7 +23,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CityCard(),
+            CityCard(listComponent: HomePage.listComponent,),
             ListCard(),
             DailyWordCard(),
             SizedBox(

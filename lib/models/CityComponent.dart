@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 
 class CityListComponent{
-  int id;
-  int index_city;
-  String name;
+  final int id;
+  final int index_city;
+  final String name;
 
   CityListComponent({
     required this.id,

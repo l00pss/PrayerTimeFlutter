@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:prayertime/dataAccess/checkData/CheckerCityList.dart';
 import 'package:prayertime/dataAccess/repositories/CityListManager.dart';
 import 'package:prayertime/models/CityComponent.dart';
+import 'package:prayertime/screens/base/HomePage.dart';
 import 'package:prayertime/utility/themes/ButtonCard.dart';
 
 class CityList extends StatefulWidget {
@@ -17,11 +18,13 @@ class _CityListState extends State<CityList> {
 
 
   Future<List<ButtonCard>> getWidgetList() async{
+    await CheckerCityList().getDataFromApi();
     var list = await CityListManager().getAll();
-    print(list.length);
     var _actionItems = <ButtonCard>[];
     list.forEach((element) {
-        _actionItems.add(ButtonCard(element.name, Icons.location_city, (){}));
+        _actionItems.add(ButtonCard(element.name, Icons.location_city, (){
+            Navigator.pop(context,element);
+        }));
     });
     return _actionItems;
   }
@@ -42,6 +45,7 @@ class _CityListState extends State<CityList> {
           }else{
             return SafeArea(
               child: Container(
+                color: Theme.of(context).primaryColor,
                 child: ListView.builder(
                     itemCount: (snapshot.data as List).length,
                     itemBuilder: (context, index) {
