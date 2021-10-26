@@ -1,67 +1,43 @@
-import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:prayertime/dataAccess/repositories/CityListManager.dart';
-import 'package:prayertime/utility/themes/ButtonCard.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:prayertime/bloc_models/CityComponentCubit.dart';
+import 'package:prayertime/bloc_models/work_states/CityCompState.dart';
+import 'package:prayertime/core/utility/themes/ButtonCard.dart';
 
-class CityList extends StatefulWidget {
-
-  @override
-  _CityListState createState() => _CityListState();
-}
-
-class _CityListState extends State<CityList> {
-
-
-  Future<List<ButtonCard>> getWidgetList() async{
-    //await CheckerCityList().getDataFromApi();
-    var list = await CityListManager().getAll();
-    var _actionItems = <ButtonCard>[];
-    list.forEach((element) {
-        _actionItems.add(ButtonCard(element.name, Icons.location_city, (){
-            Navigator.pop(context);
-        }));
-    });
-    return _actionItems;
-  }
-
-  @override
-  void initState() {
-    super.initState();
-  }
+class CityList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: FutureBuilder(
-        future: getWidgetList(),
-        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot){
-          if(!snapshot.hasData){
-            return Center(child: CircularProgressIndicator());
-          }else{
-            return SafeArea(
-              child: Container(
-                color: Theme.of(context).primaryColor,
-                child: ListView.builder(
-                    itemCount: (snapshot.data as List).length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Card(
-                          child: SizedBox(
-                            height: 50,
-                            child: Row(
-                              children: [
-                                snapshot.data[index]
-                              ],
-                            ),
-                          ),
-                        ),
-                      );
-                    }),
-              ),
+      body: BlocBuilder<CityComponentCubit,CityCompState>(
+        builder: (context,state){
+          if(state is CityCompLoadAccess){
+            var list = state.list;
+            return ListView.builder(
+                itemCount: list.length,
+                itemBuilder: (context,index){
+                  return Card(
+                    child: SizedBox(
+                      height: 50,
+                      child: Row(
+                        children: [
+                          ButtonCard(list[index].name, Icons.location_city, (){})
+                        ],
+                      ),
+                    ),
+                  );
+                }
             );
+          }else{
+            return Center(child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.mood_bad_rounded,size: 60,),
+                SizedBox(height: 10,),
+                Text("Bilinməyən Xəta")
+              ],
+            ),);
           }
         },
       ),
@@ -70,7 +46,3 @@ class _CityListState extends State<CityList> {
 }
 
 
-
-/*
-
- */

@@ -9,8 +9,6 @@ class TimeCard extends StatefulWidget {
 }
 
 class _TimeCardState extends State<TimeCard> {
-
-
   Future<City> factory(int index) async{
     City city1 = (await CityController().getDecode(index)) as City;
     return city1;
@@ -18,13 +16,7 @@ class _TimeCardState extends State<TimeCard> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: factory(1425),
-        builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot){
-          if(!snapshot.hasData){
-            return Center(child: CircularProgressIndicator());
-          }else{
-            return Column(
+    return Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
@@ -48,11 +40,9 @@ class _TimeCardState extends State<TimeCard> {
                 )
               ],
             );
-          }
-        }
-    );
   }
 }
+
 
 class TimeBox extends StatefulWidget {
   bool isTime;

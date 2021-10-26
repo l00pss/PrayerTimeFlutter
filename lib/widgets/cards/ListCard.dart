@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:prayertime/utility/themes/SpanText.dart';
-import 'package:prayertime/utility/themes/ToggleChip.dart';
+import 'package:prayertime/core/utility/themes/SpanText.dart';
+import 'package:prayertime/core/utility/themes/ToggleChip.dart';
 
 class ListCard extends StatefulWidget {
   const ListCard({Key? key}) : super(key: key);

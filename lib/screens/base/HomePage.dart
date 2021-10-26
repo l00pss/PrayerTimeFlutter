@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prayertime/entities/CityComponent.dart';
+import 'package:prayertime/entities/CityListComponent.dart';
 import 'package:prayertime/widgets//cards/ExportCards.dart';
 
 class HomePage extends StatefulWidget {

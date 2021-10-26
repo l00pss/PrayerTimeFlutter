@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prayertime/utility/themes/ButtonCard.dart';
-
+import 'package:prayertime/core/utility/themes/ButtonCard.dart';
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key? key}) : super(key: key);
 

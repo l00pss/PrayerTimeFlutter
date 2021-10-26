@@ -1,6 +1,6 @@
 import 'package:prayertime/dataAccess/client/CityListController.dart';
-import 'package:prayertime/dataAccess/repositories/CityListManager.dart';
-import 'package:prayertime/entities//CityComponent.dart';
+import 'package:prayertime/dataAccess/repositories/CityListDao.dart';
+import 'package:prayertime/entities//CityListComponent.dart';
 
 
 class CheckerCityList{
@@ -17,7 +17,7 @@ class CheckerCityList{
   }
 
   Future<void> getAllComponent() async {
-    List<CityListComponent> list = await CityListManager().getAll();
+    List<CityListComponent> list = await CityListDao().findAll();
     for(CityListComponent cityListComponent in list){
       print(cityListComponent.name);
       print(cityListComponent.index_city);
@@ -25,11 +25,11 @@ class CheckerCityList{
   }
 
   Future<void> save(int index,String name) async {
-    await CityListManager().save(index, name);
+    await CityListDao().save(index, name);
   }
 
   Future<void> delete() async {
-    await CityListManager().delete(3);
+    await CityListDao().delete(3);
   }
 
 

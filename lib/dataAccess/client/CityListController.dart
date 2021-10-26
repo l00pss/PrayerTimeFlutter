@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:prayertime/entities//CityComponent.dart';
+import 'package:prayertime/entities//CityListComponent.dart';
 import 'package:http/http.dart' as http;
 
 import 'config.dart';
