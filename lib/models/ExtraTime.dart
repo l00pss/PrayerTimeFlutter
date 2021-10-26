@@ -1,4 +1,7 @@
+import 'package:jiffy/jiffy.dart';
+
 class ExtraTimes {
+  int id;
   String israk;
   String dahve;
   String kerahat;
@@ -11,6 +14,7 @@ class ExtraTimes {
   String seher;
 
   ExtraTimes({
+    required this.id,
     required this.israk,
     required this.dahve,
     required this.kerahat,
@@ -25,6 +29,7 @@ class ExtraTimes {
 
   factory ExtraTimes.fromJson(Map<String, dynamic> decoded) {
     return ExtraTimes(
+      id: Jiffy().dayOfYear,
       israk: decoded['israk'],
       dahve: decoded['dahve'],
       kerahat: decoded['kerahat'],

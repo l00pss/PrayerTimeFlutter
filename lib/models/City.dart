@@ -1,8 +1,11 @@
 
+import 'package:jiffy/jiffy.dart';
+
 import 'BaseTime.dart';
 import 'ExtraTime.dart';
 
 class City {
+  late int id;
   late String cityIndex;
   late String cityOfName;
   late String qiblaAngle;
@@ -11,6 +14,7 @@ class City {
   late ExtraTimes extraTimes;
 
   City({
+    required this.id,
     required this.cityIndex,
     required this.cityOfName,
     required this.qiblaAngle,
@@ -23,6 +27,7 @@ class City {
 
   factory City.fromJson(Map<String, dynamic> decoded) {
     return City(
+        id: Jiffy().dayOfYear,
         cityIndex: decoded['cityIndex'],
         cityOfName: decoded['cityOfName'],
         qiblaAngle: decoded['qiblaAngle'],

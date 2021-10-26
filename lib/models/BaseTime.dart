@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:jiffy/jiffy.dart';
 
 class BaseTimes {
+  int id;
   String dayOfYear;
   String todayDate;
   String todayHijrahDate;
@@ -14,6 +16,7 @@ class BaseTimes {
   String yatsi;
 
   BaseTimes({
+    required this.id,
     required this.dayOfYear,
     required this.todayDate,
     required this.todayHijrahDate,
@@ -29,6 +32,7 @@ class BaseTimes {
 
   factory BaseTimes.fromJson(Map<String, dynamic> decoded) {
     return BaseTimes(
+        id: Jiffy().dayOfYear,
         dayOfYear: decoded['dayOfYear'],
         todayDate: decoded['todayDate'],
         todayHijrahDate: decoded['todayHijrahDate'],
