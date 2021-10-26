@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:prayertime/dataAccess/checkData/CheckerCityList.dart';
+import 'package:prayertime/dataAccess/client/CityController.dart';
 import 'package:prayertime/dataAccess/repositories/CityListManager.dart';
 import 'package:prayertime/screens/base/DrawerLayout.dart';
 import 'package:prayertime/utility/themes/ThemeFormat.dart';
@@ -18,6 +19,7 @@ Future<void> truncate() async{
   //await CityListManager().truncate();
   // await CheckerCityList().getDataFromApi();
   //await CheckerCityList().getAllComponent();
+  //await CityController().getDecode(1425);
 }
   @override
   Widget build(BuildContext context) {

@@ -2,10 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:prayertime/dataAccess/checkData/CheckerCityList.dart';
 import 'package:prayertime/dataAccess/repositories/CityListManager.dart';
-import 'package:prayertime/models/CityComponent.dart';
-import 'package:prayertime/screens/base/HomePage.dart';
 import 'package:prayertime/utility/themes/ButtonCard.dart';
 
 class CityList extends StatefulWidget {
@@ -23,7 +20,7 @@ class _CityListState extends State<CityList> {
     var _actionItems = <ButtonCard>[];
     list.forEach((element) {
         _actionItems.add(ButtonCard(element.name, Icons.location_city, (){
-            Navigator.pop(context,element);
+            Navigator.pop(context);
         }));
     });
     return _actionItems;

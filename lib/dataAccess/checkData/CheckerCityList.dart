@@ -1,6 +1,6 @@
 import 'package:prayertime/dataAccess/client/CityListController.dart';
 import 'package:prayertime/dataAccess/repositories/CityListManager.dart';
-import 'package:prayertime/models/CityComponent.dart';
+import 'package:prayertime/entities//CityComponent.dart';
 
 
 class CheckerCityList{

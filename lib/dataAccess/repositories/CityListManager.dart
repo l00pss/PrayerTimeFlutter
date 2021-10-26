@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prayertime/dataAccess/DataManager.dart';
-import 'package:prayertime/models/CityComponent.dart';
+import 'package:prayertime/entities//CityComponent.dart';
 import 'package:sqflite/sqflite.dart';
 
 class CityListManager{

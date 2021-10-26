@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:prayertime/models/CityComponent.dart';
+import 'package:prayertime/entities/CityComponent.dart';
 import 'package:prayertime/screens/base/HomePage.dart';
 import 'package:prayertime/screens/other/CityList.dart';
 import 'package:prayertime/utility/themes/SnackBarUtility.dart';
 import 'package:timer_builder/timer_builder.dart';
 
 class CityCard extends StatefulWidget {
-  CityListComponent listComponent;
+  static CityListComponent listComponent = CityListComponent(id: 0, index_city: 1425, name: "Baku");
 
-  CityCard({
-    required this.listComponent,
-  });
 
   @override
   _CityCardState createState() => _CityCardState();
@@ -41,14 +38,10 @@ class _CityCardState extends State<CityCard> {
             children: [
               TextButton(
                 onPressed: () async {
-                    var data = await Navigator.push(context, MaterialPageRoute(builder: (context)=> CityList()));
-                    setState(() {
-                      HomePage.listComponent = data;
-                      widget.listComponent = data;
-                    });
+
                 },
                 child: Text(
-                  widget.listComponent.name,
+                  CityCard.listComponent.name,
                   style: Theme.of(context).textTheme.headline1,
                 ),
                 autofocus: true,

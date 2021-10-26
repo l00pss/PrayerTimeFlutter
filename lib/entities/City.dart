@@ -6,7 +6,7 @@ import 'ExtraTime.dart';
 
 class City {
   late int id;
-  late String cityIndex;
+  late int cityIndex;
   late String cityOfName;
   late String qiblaAngle;
   late String magdeg;
@@ -28,7 +28,7 @@ class City {
   factory City.fromJson(Map<String, dynamic> decoded) {
     return City(
         id: Jiffy().dayOfYear,
-        cityIndex: decoded['cityIndex'],
+        cityIndex: decoded['cityIndex'] as int,
         cityOfName: decoded['cityOfName'],
         qiblaAngle: decoded['qiblaAngle'],
         magdeg: decoded['magdeg'],

@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:prayertime/cards/CityCard.dart';
-import 'package:prayertime/cards/ExportCards.dart';
-import 'package:prayertime/models/City.dart';
-import 'package:prayertime/models/CityComponent.dart';
+import 'package:prayertime/entities/CityComponent.dart';
+import 'package:prayertime/widgets//cards/ExportCards.dart';
 
 class HomePage extends StatefulWidget {
   static var listComponent = CityListComponent(id: 0, index_city: 1425, name: "Baku");
+
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 
-
 class _HomePageState extends State<HomePage> {
+
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -23,7 +28,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            CityCard(listComponent: HomePage.listComponent,),
+            CityCard(),
             ListCard(),
             DailyWordCard(),
             SizedBox(

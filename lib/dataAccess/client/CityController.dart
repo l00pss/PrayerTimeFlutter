@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:prayertime/models/City.dart';
+import 'package:prayertime/entities/City.dart';
 
 import 'config.dart';
 
@@ -9,6 +9,8 @@ class CityController{
   late bool success;
   late String message;
   late City data;
+
+
 
 
   Future<City> getDecode(int index)async{
