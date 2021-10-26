@@ -1,6 +1,7 @@
 import 'package:prayertime/dataAccess/client/CityListController.dart';
 import 'package:prayertime/dataAccess/repositories/CityListDao.dart';
-import 'package:prayertime/entities//CityListComponent.dart';
+import 'package:prayertime/entities/CityListComponent.dart';
+import 'package:prayertime/entities/CityListComponent.dart';
 
 
 class CheckerCityList{
@@ -10,17 +11,17 @@ class CheckerCityList{
   }
 
   Future<void> getDataFromApi()async{
-    var data = await CityListController().getDecode();
+    dynamic data = await CityListController().getDecode();
     for(CityListComponent city in data){
       save(city.index_city, city.name);
     }
   }
 
+
   Future<void> getAllComponent() async {
-    List<CityListComponent> list = await CityListDao().findAll();
+    var list = await CityListDao().findAll();
     for(CityListComponent cityListComponent in list){
-      print(cityListComponent.name);
-      print(cityListComponent.index_city);
+      print(cityListComponent.name +" "+ cityListComponent.index_city.toString());
     }
   }
 

@@ -1,22 +1,12 @@
 import 'package:prayertime/dataAccess/DataManager.dart';
 import 'package:prayertime/dataAccess/repositories/CityListRepository.dart';
-import 'package:prayertime/entities//CityListComponent.dart';
+import 'package:prayertime/entities/CityListComponent.dart';
+import 'package:prayertime/entities/CityListComponent.dart';
 import 'package:sqflite/sqflite.dart';
 
 class CityListDao extends CityListRepository{
 
 
-  @override
-  Future<List<CityListComponent>> findAll() async {
-    var connection = await DataManager.getConnection();
-    List<Map<String,dynamic>> maps = await connection.rawQuery("SELECT * FROM city_list");
-    print(maps.isEmpty);
-    return List.generate(maps.length, (index) {
-      var row = maps[index];
-      print(row['id']);
-      return CityListComponent(id: row["id"], index_city: row["index_city"], name: row["name"]);
-    });
-  }
 
   @override
   Future<void> save(int index_city,String name) async {
@@ -46,5 +36,15 @@ class CityListDao extends CityListRepository{
   Future<void> truncate()async{
     var connection = await DataManager.getConnection();
     await connection.rawQuery("DELETE from city_list");
+  }
+
+  @override
+  Future<List<CityListComponent>> findAll() async {
+    var connection = await DataManager.getConnection();
+    List<Map<String,dynamic>> maps = await connection.rawQuery("SELECT * FROM city_list");
+    return List.generate(maps.length, (index) {
+      var row = maps[index];
+      return CityListComponent(id: row["id"], index_city: row["index_city"], name: row["name"]);
+    });
   }
 }

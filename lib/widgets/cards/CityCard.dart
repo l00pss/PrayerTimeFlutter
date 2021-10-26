@@ -2,22 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:prayertime/bloc_models/CityComponentCubit.dart';
-import 'package:prayertime/entities/CityListComponent.dart';
+import 'package:prayertime/bloc_models/work_states/CityCompState.dart';
 import 'package:prayertime/core/utility/themes/SnackBarUtility.dart';
 import 'package:prayertime/screens/other/CityList.dart';
 import 'package:timer_builder/timer_builder.dart';
 
-class CityCard extends StatefulWidget {
-  @override
-  _CityCardState createState() => _CityCardState();
-}
 
 String getSystemTime() {
   var now = new DateTime.now();
   return new DateFormat("HH:mm:ss").format(now);
 }
 
+class CityCard extends StatefulWidget {
+  @override
+  _CityCardState createState() => _CityCardState();
+}
+
 class _CityCardState extends State<CityCard> {
+  var city;
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -39,9 +45,13 @@ class _CityCardState extends State<CityCard> {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => CityList()));
                 },
-                child: Text(
-                  "TEST",
-                  style: Theme.of(context).textTheme.headline1,
+                child: BlocBuilder<CityComponentCubit,CityCompState>(
+                  builder: (BuildContext context, state) {
+                    return Text(
+                      "AAA",
+                      style: Theme.of(context).textTheme.headline1,
+                    );
+                  },
                 ),
                 autofocus: true,
               ),

@@ -9,6 +9,7 @@ import 'package:prayertime/screens/base/DrawerLayout.dart';
 import 'package:get/get.dart';
 
 import 'core/utility/themes/ThemeFormat.dart';
+import 'dataAccess/checkData/CheckerCityList.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,14 +18,14 @@ void main() {
 class MyApp extends StatelessWidget {
 
 Future<void> truncate() async{
-  //await CityListManager().truncate();
+  //await CityListDao().truncate();
   //await CheckerCityList().getDataFromApi();
   //await CheckerCityList().getAllComponent();
   //await CityController().getDecode(1425);
 }
   @override
   Widget build(BuildContext context) {
-   // truncate();
+    truncate();
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context)=>CityComponentCubit(CityListDao()))
